@@ -3,13 +3,20 @@ module.exports = {
 	description: 'Display info about this server.',
 	guildOnly: true,
 	execute(message, args, serverEmbed) {
-		serverEmbed
-			.setColor('#0099ff')
-			.setTitle('Server Information')
-			.addField('Server Name', message.guild.name)
-			.addField('Owner', message.guild.owner)
-			.addField('Member Count', message.guild.memberCount)
-			// Doesn't work  .addField('Number of Roles', message.guild.roles.cache)
+		const { guild } = message;
+			serverEmbed
+				.setColor('#0099ff')
+				.setAuthor(`${guild.name} (${guild.id})`, guild.iconURL())
+				.setThumbnail(guild.iconURL())
+				.addField('Created On', guild.createdAt.toLocaleString(), true)
+				.addField('Server Owner', guild.owner.user.tag)
+				.addField('Total Members', guild.memberCount, true)
+				.addField('Total Real Members', guild.members.cache.filter(member => !member.user.bot).size, true)
+				.addField('Total Bots', guild.members.cache.filter(member => member.user.bot).size, true)
+				.addField('Total Channels', guild.channels.cache.size, true)
+				.addField('Total Text Channels', guild.channels.cache.filter(ch => ch.type === 'text').size, true)
+				.addField('Total Voice Channels', guild.channels.cache.filter(ch => ch.type === 'voice').size, true)
+				.addField('Total Roles', `${guild.roles.cache.size}`);
 
 		message.channel.send(serverEmbed);
 	},
