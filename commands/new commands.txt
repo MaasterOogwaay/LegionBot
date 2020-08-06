@@ -1,0 +1,1 @@
+Whenever you want to add a new command, you simply make a new file in your commands directory, name it what you want, and then do what you did for the other commands.
