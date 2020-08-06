@@ -1,2 +1,2 @@
 # LegionBot
-stores code for bot
+Stores the code for my Discord bot
