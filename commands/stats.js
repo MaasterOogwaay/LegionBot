@@ -3,7 +3,7 @@ module.exports = {
     description: 'Shows some info on the author of the message.',
     guildOnly: true,
 	execute(message, args, statsEmbed) {
-        if(message.content.toLowerCase().startsWith('!stats')) {
+        if(message.content.toLowerCase().startsWith('>>stats')) {
             const args = message.content.split(' ');
             console.log(args);
             if(args.length > 2) {
@@ -18,8 +18,6 @@ module.exports = {
                   .setThumbnail(member.user.displayAvatarURL())
                   .addField('Created On', member.user.createdAt.toLocaleString(), true)
                   .addField('Joined On', member.joinedAt, true)
-                  .addField('Kickable', member.kickable, false)
-                  .addField('Voice Channel', member.voice.channel ? member.voice.channel.name + `(${member.voice.channel.id})` : 'None')
                   .addField('Presence', member.presence.status)
                   .setDescription(`${member.roles.cache.map(role => role.toString()).join(' ')}`);
                 message.channel.send(statsEmbed);
