@@ -9,7 +9,7 @@ module.exports = {
             .setDescription('Here are the rules in this server')
             .setThumbnail('https://i.imgur.com/ViRCIyJ.png')
             .addFields(
-                { name: 'Im a sneaky snake', value: 'blah blah\n blah blah' },
+                { name: 'Im a sneaky snake', value: 'blah blah\n blah bluy' },
             )
             .setTimestamp('')
             .setFooter('');
