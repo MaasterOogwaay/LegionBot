@@ -81,7 +81,7 @@ for (const file of commandFiles) {
     setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
     try {
-        if (['embed', 'rules', 'my-info', 'server-info', 'regions'].includes(command.name)) {
+        if (['embed', 'rules', 'my-info', 'server-info', 'regions', 'stats'].includes(command.name)) {
             const exampleEmbed = new Discord.MessageEmbed();
             command.execute(message, args, exampleEmbed);
         } else {
