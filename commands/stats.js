@@ -1,6 +1,6 @@
 module.exports = {
     name: 'stats',
-    description: 'Shows some info on the author of the message.',
+    description: 'Display info about the user mentioned.',
     guildOnly: true,
 	execute(message, args, statsEmbed) {
         if(message.content.toLowerCase().startsWith('>>stats')) {

@@ -1,31 +1,30 @@
-// Not working yet
+/*  Not working yet
 module.exports = {
   name: 'mute',
   description: 'Mutes a user in the server',
   guildOnly: 'true',
-  execute(message) {
-      if (message.content.startsWith('>>mute')) {
-          const user = message.mentions.users.first();
-          if (user) {
-              const member = message.guild.member(user);
-              if (member) {
-                  member
-                  .mute({
-                      reason: 'They were bad!',
-                  })
-                  .then(() => {
-                      message.reply(`Successfully muted ${user.tag}`);
-                  })
-                  .catch(err => {
-                      message.reply('I was unable to mute the member');
-                      console.error(err);
-                  });
-              } else {
-                  message.reply("That user isn't in this guild!");
-              }
-          } else {
-              message.reply("You didn't mention the user to mute!");
-          }
-      }
-  }
-};
+    run: async(client, message, args) => {
+        if(!message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']))
+            message.channel.send("You don't have permissions to use that command.");
+        else {
+            let memberId = message.content.substring(message.content.indexOf(' ')+1);
+            let member = message.guild.members.cache.get(args);
+            if(member) {
+                if(member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']) && !message.member.hasPermission('ADMINISTRATOR'))
+                    message.channel.send("You cannot mute that person!");
+                else {
+                    let mutedRole = message.guild.roles.cache.get('738151363673849987');
+                    if(mutedRole) {
+                        member.roles.add(mutedRole);
+                        message.channel.send("User was muted.");
+                    }
+                    else
+                        message.channel.send("Muted role not found.");
+                }
+            }
+            else
+                message.channel.send("Member not found.");
+        }
+    },
+}
+*/
