@@ -1,7 +1,3 @@
-/**
- * A ping pong bot, whenever you send "ping", it replies "pong".
- */
-
 const fs = require("fs");
 // Import the discord.js module
 const Discord = require("discord.js");
