@@ -1,14 +1,15 @@
 module.exports = {
-	name: 'embed',
-    description: 'Creates an embed.',
-    guildOnly: true,
-	execute(message, args, exampleEmbed) {
-        let embedContent = message.content.substring(8);
-        exampleEmbed
-            .setColor('#0099ff')
-            .setDescription(embedContent)
-           
-        message.channel.send(exampleEmbed);
+  name: "embed",
+  description: "Creates an embed.",
+  guildOnly: true,
+  execute(message, args, exampleEmbed) {
+    let embedContent = message.content.substring(8);
+    exampleEmbed
+      .setColor("#3ced48")
+      .setDescription(embedContent)
+      .setTimestamp()
+      .setFooter("Legion Bot", "https://imgur.com/Syb10i5.png");
 
-	},
+    message.channel.send(exampleEmbed);
+  },
 };

@@ -17,6 +17,7 @@ module.exports = {
             : message.guild.members.cache.get(args[1]);
         if (member) {
           statsEmbed
+            .setColor("#3ced48")
             .setAuthor(
               `${member.user.tag} (${member.id})`,
               member.user.displayAvatarURL()
