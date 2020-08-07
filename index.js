@@ -2,7 +2,7 @@ const fs = require("fs");
 // Import the discord.js module
 const Discord = require("discord.js");
 
-require('dotenv').config({ path: '.env' });
+require("dotenv").config({ path: ".env" });
 
 const { PREFIX, DISCORD_TOKEN } = process.env;
 
@@ -118,14 +118,14 @@ client.on("message", (message) => {
     );
     if (!channel) return;
     const welcomeEmbed = new Discord.MessageEmbed()
-      .setColor("#0099ff")
+      .setColor("#3ced48")
       .addField("\u200B", `Welcome to Murdoc Niccals's server, ${member}`)
-      .setThumbnail("https://i.imgur.com/ViRCIyJ.png")
+      .setThumbnail(message.guild.iconURL())
       .addField(
         "\u200B",
         "In order to unlock the rest of the server, you must do a few things.\n 1 go to #bot\n 2 Set your region.\n 3 Set your platform.\n 4 Finally, you can unlock the server"
       )
-      .setFooter("Legion Bot", "https://i.imgur.com/ViRCIyJ.png");
+      .setFooter("Legion Bot", "https://imgur.com/Syb10i5.png");
     channel.send(welcomeEmbed);
   });
 
