@@ -1,4 +1,4 @@
-const { prefix } = require("../config.json");
+require('dotenv').config({ path: '../.env' });
 
 module.exports = {
   name: "help",
@@ -9,12 +9,13 @@ module.exports = {
   execute(message, args) {
     const data = [];
     const { commands } = message.client;
+    const { PREFIX } = process.env;
 
     if (!args.length) {
       data.push("Here's a list of all my commands:");
       data.push(commands.map((command) => command.name).join(", "));
       data.push(
-        `\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`
+        `\nYou can send \`${PREFIX}help [command name]\` to get info on a specific command!`
       );
 
       return message.author

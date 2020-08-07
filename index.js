@@ -1,9 +1,12 @@
 const fs = require("fs");
 // Import the discord.js module
 const Discord = require("discord.js");
-// Create an instance of a Discord client
-const { prefix, token } = require("./config.json");
 
+require('dotenv').config({ path: '.env' });
+
+const { PREFIX, DISCORD_TOKEN } = process.env;
+
+// Create an instance of a Discord client
 const client = new Discord.Client({
   partials: ["MESSAGE", "CHANNEL", "REACTION"],
 });
@@ -32,9 +35,9 @@ client.on("ready", () => {
 });
 
 client.on("message", (message) => {
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
+  if (!message.content.startsWith(PREFIX) || message.author.bot) return;
 
-  const args = message.content.slice(prefix.length).trim().split(/ +/);
+  const args = message.content.slice(PREFIX.length).trim().split(/ +/);
   const commandName = args.shift().toLowerCase();
 
   const command =
@@ -57,7 +60,7 @@ client.on("message", (message) => {
     let reply = `You didn't provide any arguments, ${message.author}!`;
 
     if (command.usage) {
-      reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
+      reply += `\nThe proper usage would be: \`${PREFIX}${command.name} ${command.usage}\``;
     }
 
     return message.channel.send(reply);
@@ -163,4 +166,4 @@ client.on("message", (message) => {
 });
 
 // Log our bot in
-client.login(token);
+client.login(DISCORD_TOKEN);
