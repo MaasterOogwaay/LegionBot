@@ -89,9 +89,15 @@ client.on("message", (message) => {
 
   try {
     if (
-      ["embed", "rules", "my-info", "server-info", "regions", "stats"].includes(
-        command.name
-      )
+      [
+        "embed",
+        "rules",
+        "my-info",
+        "server-info",
+        "regions",
+        "stats",
+        "suggestion",
+      ].includes(command.name)
     ) {
       const exampleEmbed = new Discord.MessageEmbed();
       command.execute(message, args, exampleEmbed);
@@ -133,6 +139,22 @@ client.on("message", (message) => {
             .then(() => message.react("738860282327072829"))
             .then(() => message.react("706557479647182999"))
             .then(() => message.react("738860129348223097"))
+            .catch(() => console.error("One of the emojis failed to react."));
+        }
+      }
+    }
+  });
+
+  client.on("message", (message) => {
+    if (message.author.bot) {
+      if (message.embeds) {
+        const embedMsg = message.embeds.find(
+          (msg) => msg.title === "I have a suggestion!"
+        );
+        if (embedMsg) {
+          message
+            .react("👍")
+            .then(() => message.react("👎"))
             .catch(() => console.error("One of the emojis failed to react."));
         }
       }
