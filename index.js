@@ -95,6 +95,7 @@ client.on("message", (message) => {
       [
         "embed",
         "rules",
+        "rules2",
         "my-info",
         "server-info",
         "regions",
