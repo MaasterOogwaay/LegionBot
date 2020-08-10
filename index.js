@@ -101,6 +101,7 @@ client.on("message", (message) => {
         "regions",
         "stats",
         "suggestion",
+        "faq",
       ].includes(command.name)
     ) {
       const exampleEmbed = new Discord.MessageEmbed();
