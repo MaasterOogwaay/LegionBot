@@ -62,7 +62,9 @@ module.exports = {
           name: "__I can't DM ModMail.__",
           value: "- If ModMail is offline, please DM a staff member.",
         }
-      );
+      )
+      .setTimestamp()
+      .setFooter("Legion Bot", "https://imgur.com/Syb10i5.png");
 
     message.channel.send(faqEmbed);
   },
