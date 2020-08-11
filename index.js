@@ -102,6 +102,8 @@ client.on("message", (message) => {
         "stats",
         "suggestion",
         "faq",
+        "server-partner",
+        "streamer-partner",
       ].includes(command.name)
     ) {
       const exampleEmbed = new Discord.MessageEmbed();
