@@ -53,7 +53,7 @@ client.on("message", (message) => {
   }
 
   client.user.setActivity(">>help | For help with commands", {
-    type: "PLAYING",
+    type: "LISTENING",
   });
 
   if (command.args && !args.length) {
