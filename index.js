@@ -133,25 +133,6 @@ client.on("message", (message) => {
     channel.send(welcomeEmbed);
   });
 
-  // client.on("message", (message) => {
-  //   if (message.author.bot) {
-  //     if (message.embeds) {
-  //       const embedMsg = message.embeds.find(
-  //         (msg) => msg.title === "React to obtain your region role"
-  //       );
-  //       if (embedMsg) {
-  //         message
-  //           .react("738860202350215274")
-  //           .then(() => message.react("738860185849692220"))
-  //           .then(() => message.react("738860282327072829"))
-  //           .then(() => message.react("706557479647182999"))
-  //           .then(() => message.react("738860129348223097"))
-  //           .catch(() => console.error("One of the emojis failed to react."));
-  //       }
-  //     }
-  //   }
-  // });
-
   client.on("message", (message) => {
     if (message.author.bot) {
       if (message.embeds) {
