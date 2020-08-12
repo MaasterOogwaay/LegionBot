@@ -129,8 +129,15 @@ client.on("message", (message) => {
         "\u200B",
         "In order to unlock the rest of the server, you must do a few things.\n 1 go to #bot\n 2 Set your region.\n 3 Set your platform.\n 4 Finally, you can unlock the server"
       )
+      .setTimestamp()
       .setFooter("Legion Bot", "https://imgur.com/Syb10i5.png");
     channel.send(welcomeEmbed);
+  });
+
+  client.on("guildMemberRemove", (member) => {
+    const channel = member.guild.channels.cache
+      .find((ch) => ch.name === "goodbye")
+      .send(`**${member}** has just left server.. Bye Bye🙁`);
   });
 
   client.on("message", (message) => {
