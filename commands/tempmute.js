@@ -1,4 +1,3 @@
-// error  Cannot read property 'hasPermission' of undefined on line 7
 const ms = require("ms");
 
 module.exports = {
