@@ -34,8 +34,6 @@ const getJSFilesInDirRecursively = (dirPath) => {
 // Retrieve the command files
 const commandFiles = getJSFilesInDirRecursively("./commands");
 
-console.log(commandFiles);
-
 for (const file of commandFiles) {
   const command = require("./" + file);
 
