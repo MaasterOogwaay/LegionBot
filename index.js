@@ -1,4 +1,6 @@
 const fs = require("fs");
+const path = require("path")
+
 // Import the discord.js module
 const Discord = require("discord.js");
 
@@ -13,13 +15,29 @@ const client = new Discord.Client({
 client.commands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
 
+// Given a directory, return all .js files and their full paths
+const getJSFilesInDirRecursively = (dirPath) => {
+  const files = fs.readdirSync(dirPath);
+  let arrayOfFiles = [];
+
+  files.forEach(function(file) {
+    if (fs.statSync(dirPath + "/" + file).isDirectory()) {
+      arrayOfFiles = getJSFilesInDirRecursively(dirPath + "/" + file, arrayOfFiles);
+    } else if (file.endsWith(".js")) {
+      arrayOfFiles.push(path.relative(process.cwd(), dirPath + "/" + file));
+    }
+  });
+
+  return arrayOfFiles;
+}
+
 // Retrieve the command files
-const commandFiles = fs
-  .readdirSync("./commands")
-  .filter((file) => file.endsWith(".js"));
+const commandFiles = getJSFilesInDirRecursively("./commands");
+
+console.log(commandFiles);
 
 for (const file of commandFiles) {
-  const command = require(`./commands/${file}`);
+  const command = require("./" + file);
 
   // set a new item in the Collection
   // with the key as the command name and the value as the exported module
