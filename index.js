@@ -1,5 +1,5 @@
 const fs = require("fs");
-const path = require("path")
+const path = require("path");
 
 // Import the discord.js module
 const Discord = require("discord.js");
@@ -21,16 +21,19 @@ const getJSFilesInDirRecursively = (dirPath) => {
   const files = fs.readdirSync(dirPath);
   arrayOfFiles = arrayOfFiles || [];
 
-  files.forEach(function(file) {
+  files.forEach(function (file) {
     if (fs.statSync(dirPath + "/" + file).isDirectory()) {
-      arrayOfFiles = getJSFilesInDirRecursively(dirPath + "/" + file, arrayOfFiles);
+      arrayOfFiles = getJSFilesInDirRecursively(
+        dirPath + "/" + file,
+        arrayOfFiles
+      );
     } else if (file.endsWith(".js")) {
       arrayOfFiles.push(path.relative(process.cwd(), dirPath + "/" + file));
     }
   });
 
   return arrayOfFiles;
-}
+};
 
 // Retrieve the command files
 const commandFiles = getJSFilesInDirRecursively("./commands");
@@ -123,6 +126,8 @@ client.on("message", (message) => {
         "faq",
         "server-partner",
         "streamer-partner",
+        "bi-weekly-tournament",
+        "weekly-tournament",
       ].includes(command.name)
     ) {
       const exampleEmbed = new Discord.MessageEmbed();
