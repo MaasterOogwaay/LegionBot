@@ -128,6 +128,7 @@ client.on("message", (message) => {
         "streamer-partner",
         "bi-weekly-tournament",
         "weekly-tournament",
+        "warn",
       ].includes(command.name)
     ) {
       const exampleEmbed = new Discord.MessageEmbed();
