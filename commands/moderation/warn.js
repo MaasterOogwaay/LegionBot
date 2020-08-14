@@ -18,7 +18,8 @@ module.exports = {
 
         warnEmbed
           .setColor("#3ced48")
-          .setDescription(`${member} has been warned for ${reason}`)
+          .setDescription(`${member} has been warned`)
+          .addField("\u200B", `Reason: ${reason}`)
           .setTimestamp();
 
         message.channel.send(warnEmbed);

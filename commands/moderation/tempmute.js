@@ -31,14 +31,12 @@ module.exports = {
         member.roles.remove("738151326042685462");
         member.roles.add("741061068511772742");
 
-        message.channel.send(
-          `@${member.user.tag} has been muted for ${ms(ms(time))}`
-        );
+        message.channel.send(`${member} has been muted for ${ms(ms(time))}`);
 
         setTimeout(function () {
           member.roles.add("738151326042685462");
           member.roles.remove("741061068511772742");
-          message.channel.send(`@${member.user.tag} has been unmuted.`);
+          message.channel.send(`${member} has been unmuted.`);
         }, ms(time));
       } else {
         return message.channel.send("You dont have perms.");
