@@ -1,7 +1,7 @@
-const axios = require('axios');
-const moment = require('moment');
+const axios = require("axios");
+const moment = require("moment");
 
-const { Leaderboard } = require('../database/Leaderboard');
+const { Leaderboard } = require("../database/Leaderboard");
 
 module.exports = {
   name: "pleaderboard",
@@ -18,19 +18,19 @@ module.exports = {
             const Matches = this.forceStringLength(e.Matches, 7);
             const Wins = this.forceStringLength(e.Wins, 6);
             const Losses = this.forceStringLength(e.Losses, 6);
-            const WLR = this.forceStringLength(e.WLR + '%', 3);
+            const WLR = this.forceStringLength(e.WLR + "%", 3);
 
             return (
-              '' +
+              "" +
               `
 |${Name}|${Level}|${Matches}|${Wins}|${Losses}|${WLR}|
 +--------------------+-----+-------+------+------+---+`
             );
           })
-          .join('');
+          .join("");
 
         leaderboardResult =
-          '' +
+          "" +
           `\`\`\`
 +----------------------------------------------------+
 |Leaderboard                                         |
@@ -55,12 +55,12 @@ module.exports = {
         console.log(err);
       });
   },
-  forceStringLength(string = '', length = 0) {
-    string = '' + string;
-    let result = '' + string.substring(0, length);
-    if(result.length < length) {
+  forceStringLength(string = "", length = 0) {
+    string = "" + string;
+    let result = "" + string.substring(0, length);
+    if (result.length < length) {
       result = result.padEnd(length, " ");
     }
     return result;
-  }
+  },
 };
