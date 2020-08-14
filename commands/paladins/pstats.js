@@ -1,7 +1,7 @@
 const axios = require("axios");
 const moment = require("moment");
 
-const { Leaderboard } = require("../database/Leaderboard");
+const { Leaderboard } = require("../../database/Leaderboard");
 
 module.exports = {
   name: "pstats",

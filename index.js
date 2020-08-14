@@ -16,9 +16,10 @@ client.commands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
 
 // Given a directory, return all .js files and their full paths
+let arrayOfFiles = [];
 const getJSFilesInDirRecursively = (dirPath) => {
   const files = fs.readdirSync(dirPath);
-  let arrayOfFiles = [];
+  arrayOfFiles = arrayOfFiles || [];
 
   files.forEach(function(file) {
     if (fs.statSync(dirPath + "/" + file).isDirectory()) {
@@ -33,6 +34,8 @@ const getJSFilesInDirRecursively = (dirPath) => {
 
 // Retrieve the command files
 const commandFiles = getJSFilesInDirRecursively("./commands");
+
+console.log(commandFiles);
 
 for (const file of commandFiles) {
   const command = require("./" + file);
