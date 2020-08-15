@@ -129,6 +129,9 @@ client.on("message", (message) => {
         "bi-weekly-tournament",
         "weekly-tournament",
         "warn",
+        "nrules",
+        "nrules2",
+        "npartner",
       ].includes(command.name)
     ) {
       const exampleEmbed = new Discord.MessageEmbed();
