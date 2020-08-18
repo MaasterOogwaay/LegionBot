@@ -21,7 +21,7 @@ module.exports = {
         {
           name: "**__How it works__**",
           value:
-            "- When the tournament is announced, players can react to the message which will put their name into the pool.\n - As players register we'll put them into teams.\n - Teams will have an opportunity to train during the week.\n - Each team will be asked to check in 15mins before their match\n - The tournament will run the same as the bi-weekly tournament.",
+            "- When the tournament is announced, players can react to the message which will put their name into the pool.\n - As players register we'll put them into teams.\n - A max of 3 players can group together.\n - Teams will have an opportunity to train during the week.\n - Each team will be asked to check in 15mins before their match\n - The tournament will run the same as the bi-weekly tournament.",
         },
         {
           name: "**__Additional info__**",
