@@ -1,22 +1,22 @@
 module.exports = {
-  name: "bi-weekly-tournament",
-  description: "Information about the PTF Bi-Weekly Tournament.",
+  name: "minor-league",
+  description: "Information about the PTF Minor League.",
   guildOnly: true,
-  execute(message, args, biweeklyEmbed) {
-    biweeklyEmbed
+  execute(message, args, minorEmbed) {
+    minorEmbed
       .setColor("#3ced48")
-      .setTitle("PTF Bi-Weekly Tournament")
+      .setTitle("PTF Minor League")
       .setThumbnail(message.guild.iconURL())
       .addFields(
         {
           name: "**__About__**",
           value:
-            "The PTF Bi-Weekly tournament is a tournament that has been held by us for many months. It is our first tournament solely run by the staff of the PTF server.",
+            "The PTF Minor League is a tournament designed for players ranged from Bronze to Platinum. It's our second tournament solely run by the staff of the PTF server.",
         },
         {
           name: "**__What is it?__**",
           value:
-            "The bi-weekly tournament is for teams of all ranks to come and compete against each other in a tournament setting. Look at it as scrims or training for your team.",
+            "The tournament is for teams ranked Bronze-Platinum. It is a way for teams to come and compete against each other in a tournament setting. Look at it as scrims or training for your team.",
         },
         {
           name: "**__How it works__**",
@@ -26,12 +26,12 @@ module.exports = {
         {
           name: "**__Additional info__**",
           value:
-            "- It's only for fun\n - It's possible you'll be match against a team higher ranked than yours\n - The rules can be found in #tournament-rules\n - If you any other questions just ask or DM ModMail.",
+            "- It's only for fun\n - It is possible your team could get disqualified if we find that you are smurfs.\n - It's possible you'll be match against a team higher ranked than yours\n - The rules can be found in #tournament-rules\n - If you any other questions just ask or DM ModMail.",
         }
       )
       .setTimestamp()
       .setFooter("Legion Bot", "https://imgur.com/Syb10i5.png");
 
-    message.channel.send(biweeklyEmbed);
+    message.channel.send(minorEmbed);
   },
 };
