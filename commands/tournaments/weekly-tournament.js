@@ -26,7 +26,7 @@ module.exports = {
         {
           name: "**__Additional info__**",
           value:
-            "- It's only for fun\n - It's possible you'll be matched with/against higher elo players\n - Rules can be found here: #weekly-rules \n - If you any other questions just ask or DM ModMail.",
+            "- It's only for fun\n - It's possible you'll be matched with/against higher elo players\n - Rules can be found here: #rules \n - If you any other questions just ask or DM ModMail.",
         }
       )
       .setTimestamp()
