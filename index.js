@@ -133,6 +133,7 @@ client.on("message", (message) => {
         "nrules",
         "nrules2",
         "npartner",
+        "phelp",
       ].includes(command.name)
     ) {
       const exampleEmbed = new Discord.MessageEmbed();
