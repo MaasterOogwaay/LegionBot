@@ -134,7 +134,7 @@ client.on("message", (message) => {
         "nrules2",
         "npartner",
         "phelp",
-        "helps",
+        "help",
         "help_fun",
         "help_help",
         "help_moderation",
