@@ -134,6 +134,13 @@ client.on("message", (message) => {
         "nrules2",
         "npartner",
         "phelp",
+        "helps",
+        "help_fun",
+        "help_help",
+        "help_moderation",
+        "help_paladins",
+        "help_partnerships",
+        "help_stats",
       ].includes(command.name)
     ) {
       const exampleEmbed = new Discord.MessageEmbed();
@@ -151,9 +158,10 @@ client.on("message", (message) => {
       (ch) => ch.name === "welcome"
     );
     if (!channel) return;
+    const { guild } = message;
     const welcomeEmbed = new Discord.MessageEmbed()
       .setColor("#3ced48")
-      .addField("\u200B", `Welcome to Murdoc Niccals's server, ${member}`)
+      .addField("\u200B", `Welcome to ${guild.name}, ${member}`)
       .setThumbnail(message.guild.iconURL())
       .addField(
         "\u200B",
