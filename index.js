@@ -133,6 +133,8 @@ client.on("message", (message) => {
         "nrules",
         "nrules2",
         "npartner",
+        "convoys",
+        "convoyrules",
         "phelp",
         "help",
         "help_fun",
