@@ -1,7 +1,6 @@
 module.exports = {
   name: "convoyrules",
   description: "Rules covering convoys held by Legion Logistics",
-  guildOnly: true,
   execute(message, args, convoyrulesEmbed) {
     convoyrulesEmbed
       .setColor("#3ced48")
