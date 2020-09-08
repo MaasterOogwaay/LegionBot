@@ -24,7 +24,7 @@ module.exports = {
         },
         {
           name: "**__Meet up/Departure__**",
-          value: "`-` 15:30 UTC\n `-` 16:00 UTC\n `-` Szczecin Poland",
+          value: "`-` 13:30 UTC\n `-` 14:00 UTC\n `-` Szczecin Poland",
           inline: true,
         },
         {
