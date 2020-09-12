@@ -140,6 +140,7 @@ client.on("message", (message) => {
         "npartner",
         "convoys",
         "convoyrules",
+        "applications",
         "phelp",
         "help",
         "help_fun",
