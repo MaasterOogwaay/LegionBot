@@ -31,6 +31,10 @@ module.exports = {
           name: "**__Destination__**",
           value: "Salzburg Austria",
           inline: true,
+        },
+        {
+          name: "**__Convert to your timezone__**",
+          value: "[Convert here!](https://www.thetimezoneconverter.com/)",
         }
       )
       .setImage("https://imgur.com/UvZHjMP.png")
