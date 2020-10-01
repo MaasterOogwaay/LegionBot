@@ -148,6 +148,7 @@ client.on("message", (message) => {
         "help_partnerships",
         "help_stats",
         "reminder",
+        "test",
       ].includes(command.name)
     ) {
       const exampleEmbed = new Discord.MessageEmbed();

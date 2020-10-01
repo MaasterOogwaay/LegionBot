@@ -9,35 +9,39 @@ module.exports = {
       .addFields(
         {
           name: "**__Date__**",
-          value: "12th September 2020",
+          value: "10th October 2020",
           inline: true,
         },
         {
           name: "**__Distance__**",
-          value: "1,025km",
+          value: "1,027km",
           inline: true,
         },
         {
           name: "**__Server__**",
-          value: "Simulation 1",
+          value: "Simulation 2",
           inline: true,
         },
         {
           name: "**__Meet up/Departure__**",
-          value: "`-` 13:30 UTC\n `-` 14:00 UTC\n `-` Szczecin Poland",
+          value: "`-` 3pm BST\n `-` 3:30pm BST\n `-` LKW, Hamburg",
           inline: true,
         },
         {
           name: "**__Destination__**",
-          value: "Salzburg Austria",
+          value: "Quarry, Prague",
           inline: true,
+        },
+        {
+          name: "**__Confirm your attendence here__**",
+          value: "[Click here to confirm](https://ets2c.com/)",
         },
         {
           name: "**__Convert to your timezone__**",
           value: "[Convert here!](https://www.thetimezoneconverter.com/)",
         }
       )
-      .setImage("https://imgur.com/UvZHjMP.png")
+      .setImage("https://imgur.com/JzgdxkT.png")
       .setTimestamp()
       .setFooter("Legion Bot", "https://imgur.com/Syb10i5.png");
 
