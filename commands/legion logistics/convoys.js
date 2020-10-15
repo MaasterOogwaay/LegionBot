@@ -9,7 +9,7 @@ module.exports = {
       .addFields(
         {
           name: "**__Date__**",
-          value: "10th October 2020",
+          value: "24th October 2020",
           inline: true,
         },
         {
@@ -19,12 +19,12 @@ module.exports = {
         },
         {
           name: "**__Server__**",
-          value: "Simulation 2",
+          value: "Simulation 1",
           inline: true,
         },
         {
           name: "**__Meet up/Departure__**",
-          value: "`-` 3pm BST\n `-` 3:30pm BST\n `-` LKW, Hamburg",
+          value: "`-` 4pm BST\n `-` LKW, Hamburg",
           inline: true,
         },
         {
@@ -32,10 +32,10 @@ module.exports = {
           value: "Quarry, Prague",
           inline: true,
         },
-        {
-          name: "**__Confirm your attendence here__**",
-          value: "[Click here to confirm](https://ets2c.com/)",
-        },
+        // {
+        //   name: "**__Confirm your attendence here__**",
+        //   value: "[Click here to confirm](https://ets2c.com/)",
+        // },
         {
           name: "**__Convert to your timezone__**",
           value: "[Convert here!](https://www.thetimezoneconverter.com/)",
