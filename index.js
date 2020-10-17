@@ -138,7 +138,7 @@ client.on("message", (message) => {
         "convoys",
         "externalconvoys",
         "convoyrules",
-        "applications",
+        "announcement",
         "phelp",
         "help",
         "help_fun",
